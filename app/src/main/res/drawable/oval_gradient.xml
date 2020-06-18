@@ -8,14 +8,14 @@
         android:radius="60dp"
         android:topLeftRadius="30dp"
         android:topRightRadius="30dp" />
-    <gradient android:startColor="#EC407A"
-        android:centerColor="#E91363"
-        android:endColor="#D81B60"
+    <gradient android:startColor="#f8bbd0"
+        android:centerColor="#f06292"
+        android:endColor="#e91e63"
         android:angle="90"
         />
 
     <size
-        android:height="70dp"
+        android:height="120dp"
         android:width="270dp" />
 
 

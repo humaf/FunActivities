@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:revealAnimationDuration="2000"
+    app:hideAnimationDuration="1500"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_margin="10dp"
+    app:lottie_rawRes="@raw/bored"
+    app:lottie_repeatMode="restart"
+    app:lottie_autoPlay="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="Getting Bored ?"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:layout_margin="20dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:lottie_rawRes="@raw/colorful"
+        app:lottie_repeatMode="restart"
+        app:lottie_autoPlay="true"/>
+
+
+
+</LinearLayout>
