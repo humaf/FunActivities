@@ -2,7 +2,11 @@ package com.design.myapplication
 
 
 import android.app.Dialog
-import android.content.DialogInterface
+import android.content.Context
+import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,18 +15,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.design.myapplication.model.Item
 import com.design.myapplication.network.MyApi
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dialog_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,11 +40,20 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
            // text.setVisibility(View.VISIBLE)
-           var r= getData()
-            Log.i("wwwwwwwwwww",r)
-//            btn.setVisibility(View.GONE)
+            if(isNetworkConnected()) {
 
+                var r = getData()
+                Log.i("wwwwwwwwwww", r)
 
+            }
+                else
+            {
+                AlertDialog.Builder(this).setTitle("No Internet Connection")
+                    .setMessage("Please check your internet connection and try again")
+                    .setPositiveButton(android.R.string.ok) { _, _ -> }
+                    .setIcon(android.R.drawable.ic_dialog_alert).show()
+
+            }
 
             // card.setVisibility(View.VISIBLE)
 
@@ -107,6 +121,21 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun isNetworkConnected(): Boolean {
+        //1
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        //2
+        val activeNetwork = connectivityManager.activeNetwork
+        //3
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
+        //4
+        return networkCapabilities != null &&
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
+
+
     private fun showDialog(title: String) {
         val dialog = Dialog(applicationContext)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -126,33 +155,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun showd(message : String){
 
-    //    val builder = AlertDialog.Builder(this)
+        //    val builder = AlertDialog.Builder(this)
 
-        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogCustom))
-        //set title for alert dialog
-    //    builder.setTitle("Hello")
-        //set message for alert dialog
-        builder.setMessage(message)
-
-        Log.i("sssssssssssssssssss",message)
-     //   builder.setIcon(android.R.drawable.ic_dialog_alert)
+   /*     val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         builder.setPositiveButton("Okay",null)
-
-
 
         // Create the AlertDialog
         val alertDialog: AlertDialog = builder.create()
+
         // Set other dialog properties
         alertDialog.setCancelable(false)
         alertDialog.show()
+*/
 
+       val Dialog = MaterialAlertDialogBuilder(this,R.style.AlertDialogTheme)
+           .setMessage(message)
+           .setPositiveButton("Okay",null)
+           .show();
 
 
     }
-
-
-
-
 
 
     fun showMessageBox(text: String){

@@ -3,10 +3,7 @@ package com.design.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-
 import androidx.appcompat.app.AppCompatActivity
-import com.jem.easyreveal.clippathproviders.StarClipPathProvider
-import com.jem.easyreveal.layouts.EasyRevealLinearLayout
 
 class SplashActivity : AppCompatActivity() {
 

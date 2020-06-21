@@ -5,6 +5,14 @@
     android:background="@color/colorBackground"
     android:gravity="center">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dtext"
+        android:text="Heyyyyyyy"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+    />
 
     <Button
         android:text="Okay"
