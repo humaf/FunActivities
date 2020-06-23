@@ -1,28 +1,17 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorAlertDialogListItem">@color/colorPrimary</item>
     </style>
 
    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-
-       <item name="android:textSize">25sp</item>
-       <item name="android:textColor">@color/colorAccent</item>
-       <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Medium</item>
-       <item name="android:background">#fce4ec</item>
-       <item name="android:fontFamily">casual</item>
-       <item name="android:textStyle">bold</item>
+       <item name="material_dialog_background">@color/colorBackground</item>
+       <item name="android:fontFamily">@font/bubblegum_sans</item>
+       <item name="android:textSize">30sp</item>
+       <item name="android:textColor">@color/colorPrimaryDark</item>
+       <item name="material_dialog_positive_button_text_color">#000000</item>
    </style>
-<style name="messagetheme" parent="TextAppearance.MaterialComponents.Headline3">
-    <item name="android:textSize">20sp</item>
-    <item name="android:textColor">#F00000</item>
-    
-</style>
-
-
-
 </resources>
