@@ -3,16 +3,19 @@ package com.design.myapplication
 
 
 import android.content.Context
+import android.graphics.drawable.AnimationDrawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.ContextThemeWrapper
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.design.myapplication.model.Item
 import com.design.myapplication.network.MyApi
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,11 +23,23 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val linearLayout: LinearLayout = findViewById(R.id.lanim)
+        val animationDrawable =
+            linearLayout.background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2000)
+        animationDrawable.setExitFadeDuration(4000)
+        animationDrawable.start()
+
+
+
 
         btn.setOnClickListener {
            // text.setVisibility(View.VISIBLE)

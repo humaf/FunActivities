@@ -6,15 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    android:background="@color/colorBackground"
+    android:id="@+id/lanim"
+    android:background="@drawable/gradient_list"
     tools:context=".MainActivity">
 
    <com.airbnb.lottie.LottieAnimationView
        android:layout_width="match_parent"
        android:layout_height="400dp"
-       android:text="Press Me to get Ideas"
        android:id="@+id/btn"
-       app:lottie_rawRes="@raw/buttonpress"/>
+       app:lottie_rawRes="@raw/buttonyes"/>
 
     <TextView
         android:layout_width="match_parent"
