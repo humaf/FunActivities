@@ -14,7 +14,7 @@
        android:layout_width="match_parent"
        android:layout_height="400dp"
        android:id="@+id/btn"
-       app:lottie_rawRes="@raw/buttonyes"/>
+       app:lottie_rawRes="@raw/buttonpress"/>
 
     <TextView
         android:layout_width="match_parent"

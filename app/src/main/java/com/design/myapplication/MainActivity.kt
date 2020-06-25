@@ -1,7 +1,5 @@
 package com.design.myapplication
 
-
-
 import android.content.Context
 import android.graphics.drawable.AnimationDrawable
 import android.net.ConnectivityManager
@@ -10,7 +8,6 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.ContextThemeWrapper
-import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -33,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val linearLayout: LinearLayout = findViewById(R.id.lanim)
         val animationDrawable =
+
             linearLayout.background as AnimationDrawable
         animationDrawable.setEnterFadeDuration(2000)
         animationDrawable.setExitFadeDuration(4000)
@@ -55,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                 AlertDialog.Builder(this,R.style.AlertDialogTheme).setTitle("No Internet Connection")
                     .setMessage("Please check your internet connection and try again")
                     .setPositiveButton(android.R.string.ok) { _, _ -> }
-                    .setIcon(android.R.drawable.ic_dialog_alert).show()
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show()
 
             }
 
